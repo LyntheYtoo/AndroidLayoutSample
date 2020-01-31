@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="6dp">
+
+    <FrameLayout
+        android:id="@+id/sample_card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/sample_card_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop" />
+        <TextView
+            android:id="@+id/sample_card_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:text="@string/sample_name"
+            android:textSize="24dp"
+            android:textColor="@color/textWhite"
+            android:layout_margin="10dp"
+            android:shadowColor="#000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1.5"/>
+        <Button
+            android:id="@+id/sample_card_star"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_star_border_white_24dp" />
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>
