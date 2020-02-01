@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|bottom"
             android:text="@string/sample_name"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textColor="@color/textWhite"
             android:layout_margin="10dp"
             android:shadowColor="#000"
