@@ -35,6 +35,7 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleCardViewHolder> {
         MockCardData element = mCardDataList.get(position);
         holder.setImage(element.imageId);
         holder.setName(element.name);
+        
     }
 
     @Override
