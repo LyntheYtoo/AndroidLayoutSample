@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:text="Restaurant"
         android:textColor="@color/textGray"
-        android:background="@android:color/transparent" />
+        android:background="@android:color/transparent"
+        android:onClick="startActivity"/>
 
 </LinearLayout>

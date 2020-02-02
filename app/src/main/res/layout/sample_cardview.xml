@@ -21,12 +21,12 @@
             android:id="@+id/sample_card_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:layout_gravity="start|bottom"
             android:text="@string/sample_name"
             android:textSize="24sp"
             android:textColor="@color/textWhite"
-            android:layout_margin="10dp"
-            android:shadowColor="#000"
+            android:shadowColor="@android:color/black"
             android:shadowDx="2"
             android:shadowDy="2"
             android:shadowRadius="1.5"/>
@@ -34,8 +34,8 @@
             android:id="@+id/sample_card_star"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_margin="8dp"
             android:layout_gravity="end|bottom"
-            android:layout_margin="10dp"
             android:background="@drawable/ic_star_border_white_24dp" />
 
     </FrameLayout>

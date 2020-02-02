@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/descript_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintTop_toBottomOf="@id/info_imageview"
+    app:layout_constraintBottom_toBottomOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/descript_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!--        top contents-->
+        <TextView
+            android:id="@+id/descript_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/nutrition_name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/descript_smallname1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/calories_name"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/descript_title2"
+            app:layout_constraintStart_toStartOf="@id/descript_largename1"
+            app:layout_constraintEnd_toEndOf="@id/descript_largename1"/>
+        <TextView
+            android:id="@+id/descript_smallname2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/protein_name"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/descript_smallname1"
+            app:layout_constraintStart_toStartOf="@id/descript_largename2"
+            app:layout_constraintEnd_toEndOf="@id/descript_largename2"/>
+        <TextView
+            android:id="@+id/descript_smallname3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fat_name"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/descript_smallname1"
+            app:layout_constraintStart_toStartOf="@id/descript_largename3"
+            app:layout_constraintEnd_toEndOf="@id/descript_largename3"/>
+
+        <TextView
+            android:id="@+id/descript_largename1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/calories"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/descript_smallname1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/descript_largename2"/>
+        <TextView
+            android:id="@+id/descript_largename2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/protein"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/descript_largename1"
+            app:layout_constraintStart_toEndOf="@id/descript_largename1"
+            app:layout_constraintEnd_toStartOf="@id/descript_largename3"/>
+        <TextView
+            android:id="@+id/descript_largename3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fat"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/descript_largename1"
+            app:layout_constraintStart_toEndOf="@id/descript_largename2"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!--        top vertical border-->
+        <View
+            android:id="@+id/descript_verticalborder1"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/descript_smallname1"
+            app:layout_constraintBottom_toBottomOf="@id/descript_largename1"
+            app:layout_constraintStart_toEndOf="@id/descript_largename1"
+            app:layout_constraintEnd_toStartOf="@id/descript_largename2"/>
+        <View
+            android:id="@+id/descript_verticalborder2"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/descript_smallname1"
+            app:layout_constraintBottom_toBottomOf="@id/descript_largename1"
+            app:layout_constraintStart_toEndOf="@id/descript_largename2"
+            app:layout_constraintEnd_toStartOf="@id/descript_largename3"/>
+
+
+<!--        horizontal border-->
+        <View
+            android:id="@+id/descript_horizontalborder1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/descript_largename1"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <!--        bottom contents-->
+        <TextView
+            android:id="@+id/descript_title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/sample_name"
+            android:textSize="24sp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:labelFor="@id/descript_longtext"
+            app:layout_constraintTop_toBottomOf="@id/descript_horizontalborder1"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:id="@+id/descript_longtext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/long_text"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:hint="@string/sample_name"
+            app:layout_constraintTop_toBottomOf="@id/descript_title1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

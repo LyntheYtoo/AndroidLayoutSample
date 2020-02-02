@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:duration="1000">
+        <OnSwipe
+            motion:touchAnchorId="@id/info_imageview"
+            motion:touchAnchorSide="bottom"
+            motion:dragDirection="dragUp" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/info_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintHeight_percent="0.33"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chicken"/>
+        <Constraint
+            android:id="@+id/info_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/ic_arrow_back_white_24dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"/>
+        <Constraint
+            android:id="@+id/info_star"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/ic_star_border_white_24dp"
+            motion:layout_constraintTop_toTopOf="@id/info_imageview"
+            motion:layout_constraintEnd_toEndOf="@id/info_imageview"/>
+        <Constraint
+            android:id="@+id/info_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1.5"
+            android:text="@string/sample_name"
+            android:textColor="@color/textWhite"
+            android:textSize="24sp"
+            motion:layout_constraintBottom_toBottomOf="@id/info_imageview"
+            motion:layout_constraintStart_toStartOf="@id/info_imageview" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/info_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="0.5"
+            motion:layout_constraintHeight_percent="0.1"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chicken"/>
+        <Constraint
+            android:id="@+id/info_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"/>
+        <Constraint
+            android:id="@+id/info_star"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/ic_star_border_white_24dp"
+            motion:layout_constraintTop_toTopOf="@id/info_imageview"
+            motion:layout_constraintBottom_toBottomOf="@id/info_imageview"
+            motion:layout_constraintEnd_toEndOf="@id/info_imageview"/>
+        <Constraint
+            android:id="@+id/info_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1.5"
+            android:text="@string/sample_name"
+            android:textColor="@color/textWhite"
+            android:textSize="24sp"
+            motion:layout_constraintTop_toTopOf="@id/info_imageview"
+            motion:layout_constraintBottom_toBottomOf="@id/info_imageview"
+            motion:layout_constraintStart_toStartOf="@id/info_imageview" />
+    </ConstraintSet>
+
+</MotionScene>

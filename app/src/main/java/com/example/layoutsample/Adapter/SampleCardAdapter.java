@@ -1,6 +1,5 @@
 package com.example.layoutsample.Adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -13,11 +12,11 @@ import com.example.layoutsample.R;
 
 import java.util.List;
 
-public class SampleAdapter extends RecyclerView.Adapter<SampleCardViewHolder> {
-    public static final String TAG = "SampleAdapter";
-    private List<MockCardData> mCardDataList;
+public class SampleCardAdapter extends RecyclerView.Adapter<SampleCardViewHolder> {
+    public static final String TAG = "SampleCardAdapter";
+    private MockCardData[] mCardDataList;
 
-    public void setDataList(List<MockCardData> cardDataList) {
+    public void setDataList(MockCardData[] cardDataList) {
         mCardDataList = cardDataList;
     }
 
@@ -32,14 +31,16 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleCardViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull SampleCardViewHolder holder, int position) {
-        MockCardData element = mCardDataList.get(position);
+        MockCardData element = mCardDataList[position];
         holder.setImage(element.imageId);
         holder.setName(element.name);
-        
+        holder.setStarFill(element.getState());
+        holder.setStarStateController(element);
+        holder.setPayload(element);
     }
 
     @Override
     public int getItemCount() {
-        return mCardDataList.size();
+        return mCardDataList.length;
     }
 }
