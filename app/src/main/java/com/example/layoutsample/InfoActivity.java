@@ -12,41 +12,55 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * Food의 각 항목 설명을 보여주는 액티비티
+ */
 public class InfoActivity extends AppCompatActivity {
 
+    // Food 배경 사진 뷰
     private ImageView mBackground;
+    // Food 이름 뷰
     private TextView mName;
+    // Food 별 표시 뷰
     private Button mStar;
 
-    private MockCardData mData;
 
+    private FoodData mData;
+
+    /**
+     * 이전상태, 인텐트에서 데이터를 받아 저장
+     * 뷰 초기화
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
+        Intent intent = getIntent();
 
         //view initialize
         mBackground = findViewById(R.id.info_imageview);
         mName = findViewById(R.id.info_name);
         mStar = findViewById(R.id.info_star);
 
-        //get intent payload
-        Intent intent = getIntent();
-        if(intent != null) {
-            mData = intent.getParcelableExtra("payload");
-        }
-        //get save state
+        // 우선순위 대로 데이터를 받음
+        // 1. savedInstanceSate
+        // 2. intent
         if(savedInstanceState != null) {
             mData = savedInstanceState.getParcelable("payload");
-        }
-
-        if(mData != null) {
+        } else if(intent != null) {
+            mData = intent.getParcelableExtra("payload");
+        } else {
             setName(mData.name);
             setImage(mData.imageId);
-            setStarFill(mData.getState());
+            setStarFill(mData.stared);
         }
     }
 
+    /**
+     * 현재 상태 보존을 위한 메서드
+     * @param outState 상태 저장 할 객체
+     */
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -59,9 +73,11 @@ public class InfoActivity extends AppCompatActivity {
 
         mBackground.setImageDrawable(drawable);
     }
+
     public void setName(String name) {
         mName.setText(name);
     }
+
     public void setStarFill(boolean isFill) {
         Resources resources = getResources();
         Drawable drawable = null;
@@ -73,6 +89,7 @@ public class InfoActivity extends AppCompatActivity {
         }
         mStar.setBackground(drawable);
     }
+
     public void finishActivity(View v) {
         finish();
     }

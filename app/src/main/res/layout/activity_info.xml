@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/info_layout_motion"
     tools:context=".InfoActivity">
+
     <ImageView
         android:id="@+id/info_imageview"
         android:layout_width="match_parent"
@@ -15,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:scaleType="centerCrop" />
+
     <Button
         android:id="@+id/info_back"
         android:layout_width="40dp"
@@ -24,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:onClick="finishActivity"/>
+
     <Button
         android:id="@+id/info_star"
         android:layout_height="40dp"
@@ -47,6 +50,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/info_imageview"
         app:layout_constraintStart_toStartOf="@id/info_imageview" />
+
     <include layout="@layout/descript_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 public class BitmapLoader {
     private BitmapCacheManager mCacheManager;
+    private float mScale = 0f;
 
     public BitmapLoader(BitmapCacheManager cacheManager) {
         mCacheManager = cacheManager;
@@ -21,22 +22,35 @@ public class BitmapLoader {
             imageView.setImageBitmap(bitmap);
         } else {
             BitmapWorkerTask task = new BitmapWorkerTask(res, resId, imageView);
-            task.execute();
+            Float s = mScale == 0f? null: mScale;
+            task.execute(s);
         }
     }
-    static class BitmapWorkerTask extends AsyncTask<Void, Void, Bitmap> {
+    public void setScale(float scale) {
+        mScale = scale;
+    }
+
+    static class BitmapWorkerTask extends AsyncTask<Float, Void, Bitmap> {
         private final Resources mRes;
-        private final int mResId;
         private final ImageView mImageView;
+
+        private int mResId;
 
         BitmapWorkerTask(Resources res, int resId, ImageView imageView) {
             mRes = res;
-            mResId = resId;
             mImageView = imageView;
+            mResId = resId;
         }
+
         @Override
-        protected Bitmap doInBackground(Void... voids) {
-            return BitmapFactory.decodeResource(mRes, mResId);
+        protected Bitmap doInBackground(Float... params) {
+
+            if(params[0] == null) {
+                return BitmapFactory.decodeResource(mRes, mResId);
+            }
+            Bitmap bitmap =  BitmapFactory.decodeResource(mRes, mResId);
+            //scale size
+            return Bitmap.createScaledBitmap(bitmap, (int)(bitmap.getWidth()*params[0]), (int)(bitmap.getHeight()*params[0]), false);
         }
 
         @Override

@@ -7,16 +7,14 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.layoutsample.MockCardData;
+import com.example.layoutsample.FoodData;
 import com.example.layoutsample.R;
-
-import java.util.List;
 
 public class SampleCardAdapter extends RecyclerView.Adapter<SampleCardViewHolder> {
     public static final String TAG = "SampleCardAdapter";
-    private MockCardData[] mCardDataList;
+    private FoodData[] mCardDataList;
 
-    public void setDataList(MockCardData[] cardDataList) {
+    public void setDataList(FoodData[] cardDataList) {
         mCardDataList = cardDataList;
     }
 
@@ -31,12 +29,8 @@ public class SampleCardAdapter extends RecyclerView.Adapter<SampleCardViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull SampleCardViewHolder holder, int position) {
-        MockCardData element = mCardDataList[position];
-        holder.setImage(element.imageId);
-        holder.setName(element.name);
-        holder.setStarFill(element.getState());
-        holder.setStarStateController(element);
-        holder.setPayload(element);
+        FoodData element = mCardDataList[position];
+        holder.applyData(element);
     }
 
     @Override

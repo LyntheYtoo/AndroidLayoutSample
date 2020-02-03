@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+<!--        top contents-->
+        <TextView
+            android:id="@+id/descript_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/nutrition_name"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+<!--            vertical border-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/descript_smallname1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_gravity="center"
+                    android:text="@string/calories_name"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/darker_gray"/>
+                <TextView
+                    android:id="@+id/descript_largename1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:text="@string/calories"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray" />
+            </LinearLayout>
+
+<!--            vertical border-->
+            <View
+                android:id="@+id/descript_verticalborder1"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:background="@android:color/darker_gray" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/descript_smallname2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_gravity="center"
+                    android:text="@string/protein_name"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/darker_gray"/>
+                <TextView
+                    android:id="@+id/descript_largename2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:text="@string/protein"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray" />
+            </LinearLayout>
+
+<!--            vertical border-->
+            <View
+                android:id="@+id/descript_verticalborder2"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:background="@android:color/darker_gray" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/descript_smallname3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_gravity="center"
+                    android:text="@string/fat_name"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/darker_gray"/>
+                <TextView
+                    android:id="@+id/descript_largename3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:text="@string/fat"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray" />
+            </LinearLayout>
+        </LinearLayout>
+
+<!--        horizontal border-->
+        <View
+            android:id="@+id/descript_horizontalborder1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/darker_gray"/>
+
+<!--        bottom contents-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/descript_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/sample_name"
+                android:textSize="24sp"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:labelFor="@id/descript_longtext"/>
+            <TextView
+                android:id="@+id/descript_longtext"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/long_text"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:hint="@string/sample_name"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
