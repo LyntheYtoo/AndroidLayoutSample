@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Food의 각 항목 설명을 보여주는 액티비티
+ * Food의 설명을 보여주는 액티비티
  */
 public class InfoActivity extends AppCompatActivity {
 
@@ -50,7 +50,10 @@ public class InfoActivity extends AppCompatActivity {
             mData = savedInstanceState.getParcelable("payload");
         } else if(intent != null) {
             mData = intent.getParcelableExtra("payload");
-        } else {
+        }
+
+        //데이터 등록
+        if(mData != null) {
             setName(mData.name);
             setImage(mData.imageId);
             setStarFill(mData.stared);
@@ -67,6 +70,10 @@ public class InfoActivity extends AppCompatActivity {
         outState.putParcelable("payload", mData);
     }
 
+    /**
+     * 이미지 리소스 배경뷰에 등록
+     * @param imageId 이미지 리소스 id
+     */
     public void setImage(int imageId) {
         Resources resources = getResources();
         Drawable drawable = resources.getDrawable(imageId, null);
@@ -74,10 +81,18 @@ public class InfoActivity extends AppCompatActivity {
         mBackground.setImageDrawable(drawable);
     }
 
+    /**
+     * 문자열 이름뷰에 등록
+     * @param name 이름 문자열
+     */
     public void setName(String name) {
         mName.setText(name);
     }
 
+    /**
+     * 스타 버튼의 별이 채워질지 말지 결정
+     * @param isFill 결정여부
+     */
     public void setStarFill(boolean isFill) {
         Resources resources = getResources();
         Drawable drawable = null;
@@ -90,6 +105,10 @@ public class InfoActivity extends AppCompatActivity {
         mStar.setBackground(drawable);
     }
 
+    /**
+     * xml에서 onClick 속성으로 사용할 메서드
+     * @param v 속성에 등록한 뷰
+     */
     public void finishActivity(View v) {
         finish();
     }

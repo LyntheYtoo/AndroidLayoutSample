@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- 모션레이아웃으로 구성된 info창 -->
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +10,7 @@
     app:layoutDescription="@xml/info_layout_motion"
     tools:context=".InfoActivity">
 
+    <!--  배경 뷰  -->
     <ImageView
         android:id="@+id/info_imageview"
         android:layout_width="match_parent"
@@ -17,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:scaleType="centerCrop" />
 
+    <!--  뒤로가기 버튼  -->
     <Button
         android:id="@+id/info_back"
         android:layout_width="40dp"
@@ -27,6 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:onClick="finishActivity"/>
 
+    <!--  별 표시 버튼  -->
     <Button
         android:id="@+id/info_star"
         android:layout_height="40dp"
@@ -36,6 +41,7 @@
         app:layout_constraintTop_toTopOf="@id/info_imageview"
         app:layout_constraintEnd_toEndOf="@id/info_imageview" />
 
+    <!--  이름 표시 뷰  -->
     <TextView
         android:id="@+id/info_name"
         android:layout_width="wrap_content"
@@ -51,6 +57,7 @@
         app:layout_constraintBottom_toBottomOf="@id/info_imageview"
         app:layout_constraintStart_toStartOf="@id/info_imageview" />
 
+    <!--  해당 설명에 대한 컨텐츠  -->
     <include layout="@layout/descript_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"

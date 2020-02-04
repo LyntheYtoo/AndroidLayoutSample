@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- 테두리를 둥글게 표기하고 주변에 그림자 효과를 내기 위한 CardView -->
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -6,12 +9,14 @@
     android:layout_margin="5dp"
     app:cardCornerRadius="6dp">
 
+
+    <!-- 사진과 사진 내부에 부가요소를 넣기위해 FrameLayout 사용 -->
     <FrameLayout
         android:id="@+id/sample_card_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--        -->
+        <!--  배경 뷰  -->
         <ImageView
             android:id="@+id/sample_card_background"
             android:layout_width="match_parent"
@@ -19,6 +24,7 @@
             android:layout_gravity="center"
             android:scaleType="centerCrop" />
 
+        <!--  이름 표시 뷰  -->
         <TextView
             android:id="@+id/sample_card_name"
             android:layout_width="wrap_content"
@@ -33,6 +39,7 @@
             android:shadowDy="2"
             android:shadowRadius="1.5"/>
 
+        <!--  별 표시 버튼  -->
         <Button
             android:id="@+id/sample_card_star"
             android:layout_width="40dp"

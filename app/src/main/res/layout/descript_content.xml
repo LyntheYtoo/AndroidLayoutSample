@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--  Food에 대한 영양소 표시 및 설명문  -->
+<!-- MotionLayout 안에 스크롤 뷰를 넣기위해 Nested ScrollView를 사용 -->
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:id="@+id/descript_scrollview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+    <!--  내부 레이아웃은 ConstraintLayout 을 사용  -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/descript_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
-        <!--        top contents-->
+        <!--  Top Contents  -->
+
+        <!--    제목 Nutrition    -->
         <TextView
-            android:id="@+id/descript_title2"
+            android:id="@+id/descript_top_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -23,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
+        <!--    소제목1 Calories    -->
         <TextView
             android:id="@+id/descript_smallname1"
             android:layout_width="wrap_content"
@@ -31,9 +39,11 @@
             android:text="@string/calories_name"
             android:textSize="12sp"
             android:textColor="@android:color/darker_gray"
-            app:layout_constraintTop_toBottomOf="@id/descript_title2"
+            app:layout_constraintTop_toBottomOf="@id/descript_top_title"
             app:layout_constraintStart_toStartOf="@id/descript_largename1"
             app:layout_constraintEnd_toEndOf="@id/descript_largename1"/>
+
+        <!--    소제목2 Protein     -->
         <TextView
             android:id="@+id/descript_smallname2"
             android:layout_width="wrap_content"
@@ -44,6 +54,8 @@
             app:layout_constraintTop_toTopOf="@id/descript_smallname1"
             app:layout_constraintStart_toStartOf="@id/descript_largename2"
             app:layout_constraintEnd_toEndOf="@id/descript_largename2"/>
+
+        <!--    소제목3 Fat    -->
         <TextView
             android:id="@+id/descript_smallname3"
             android:layout_width="wrap_content"
@@ -55,6 +67,9 @@
             app:layout_constraintStart_toStartOf="@id/descript_largename3"
             app:layout_constraintEnd_toEndOf="@id/descript_largename3"/>
 
+
+
+        <!-- 내용1 Calories Value  -->
         <TextView
             android:id="@+id/descript_largename1"
             android:layout_width="wrap_content"
@@ -67,6 +82,8 @@
             app:layout_constraintTop_toBottomOf="@id/descript_smallname1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/descript_largename2"/>
+
+        <!-- 내용2 Protein Value  -->
         <TextView
             android:id="@+id/descript_largename2"
             android:layout_width="wrap_content"
@@ -78,6 +95,8 @@
             app:layout_constraintTop_toTopOf="@id/descript_largename1"
             app:layout_constraintStart_toEndOf="@id/descript_largename1"
             app:layout_constraintEnd_toStartOf="@id/descript_largename3"/>
+
+        <!-- 내용3 Fat Value  -->
         <TextView
             android:id="@+id/descript_largename3"
             android:layout_width="wrap_content"
@@ -90,7 +109,12 @@
             app:layout_constraintStart_toEndOf="@id/descript_largename2"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <!--        top vertical border-->
+
+
+        <!-- top vertical borders -->
+
+        <!--    수직 경계선1    -->
+        <!-- 내용1 과 내용2 사이에 있음 -->
         <View
             android:id="@+id/descript_verticalborder1"
             android:layout_width="2dp"
@@ -100,6 +124,9 @@
             app:layout_constraintBottom_toBottomOf="@id/descript_largename1"
             app:layout_constraintStart_toEndOf="@id/descript_largename1"
             app:layout_constraintEnd_toStartOf="@id/descript_largename2"/>
+
+        <!--    수직 경계선2    -->
+        <!-- 내용2 과 내용3 사이에 있음 -->
         <View
             android:id="@+id/descript_verticalborder2"
             android:layout_width="2dp"
@@ -111,7 +138,8 @@
             app:layout_constraintEnd_toStartOf="@id/descript_largename3"/>
 
 
-<!--        horizontal border-->
+        <!--  horizontal border  -->
+        <!--    top contents 와 bottom contents 를 나누는 수평경계선    -->
         <View
             android:id="@+id/descript_horizontalborder1"
             android:layout_width="match_parent"
@@ -122,9 +150,13 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
 
-        <!--        bottom contents-->
+
+
+
+        <!--  bottom contents  -->
+        <!--    설명문 제목    -->
         <TextView
-            android:id="@+id/descript_title1"
+            android:id="@+id/descript_bottom_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -135,6 +167,8 @@
             android:labelFor="@id/descript_longtext"
             app:layout_constraintTop_toBottomOf="@id/descript_horizontalborder1"
             app:layout_constraintStart_toStartOf="parent"/>
+
+        <!--    설명문 내용    -->
         <TextView
             android:id="@+id/descript_longtext"
             android:layout_width="0dp"
@@ -145,7 +179,7 @@
             android:textSize="12sp"
             android:textStyle="italic"
             android:hint="@string/sample_name"
-            app:layout_constraintTop_toBottomOf="@id/descript_title1"
+            app:layout_constraintTop_toBottomOf="@id/descript_bottom_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 

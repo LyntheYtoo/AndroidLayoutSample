@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<!-- 리니어 레이아웃만 구성된 info창 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,10 +10,13 @@
     android:orientation="vertical"
     tools:context=".InfoLinearActivity">
 
+    <!-- 사진과 사진 내부에 부가요소를 넣기위해 FrameLayout 사용 -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2">
+
+        <!--  배경 뷰  -->
         <ImageView
             android:id="@+id/info_imageview"
             android:layout_width="match_parent"
@@ -21,6 +24,8 @@
             android:layout_gravity="center"
             android:scaleType="centerCrop"
             android:src="@drawable/restaurants"/>
+
+        <!--  뒤로가기 버튼  -->
         <Button
             android:id="@+id/info_back"
             android:layout_width="40dp"
@@ -29,6 +34,8 @@
             android:layout_gravity="start|top"
             android:background="@drawable/ic_arrow_back_white_24dp"
             android:onClick="finishActivity"/>
+
+        <!--  별 표시 버튼  -->
         <Button
             android:id="@+id/info_star"
             android:layout_height="40dp"
@@ -37,6 +44,8 @@
             android:layout_gravity="end|top"
             android:background="@drawable/ic_star_border_white_24dp" />
 
+
+        <!--  이름 표시 뷰  -->
         <TextView
             android:id="@+id/info_name"
             android:layout_width="wrap_content"
@@ -51,6 +60,8 @@
             android:textColor="@color/textWhite"
             android:textSize="24sp" />
     </FrameLayout>
+
+    <!--  해당 설명에 대한 컨텐츠  -->
     <include layout="@layout/descript_content_linear"
         android:layout_height="0dp"
         android:layout_width="match_parent"

@@ -1,35 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<!--  Food에 대한 영양소 표시 및 설명문  -->
+<!-- 다른 레이아웃 내부에 스크롤뷰를 표시 하기 위해 Nested ScrollView를 사용 -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true">
+
+    <!--  내부 레이아웃은 LinearLayout 을 사용  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-<!--        top contents-->
+
+
+        <!--  Top Contents  -->
+
+        <!--    제목 Nutrition    -->
         <TextView
-            android:id="@+id/descript_title2"
+            android:id="@+id/descript_top_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="@string/nutrition_name"
             android:textSize="24sp"
             android:textStyle="bold"/>
+
+        <!--    Nutrition의 내용을 표기 하기 위한 수평 LinearLayout    -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:orientation="horizontal">
 
-<!--            vertical border-->
+            <!--  각 영양소별 제목과 내용을 담기위한 수직 LinearLayout  -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:orientation="vertical">
+
+                <!--    소제목1 Calories    -->
                 <TextView
                     android:id="@+id/descript_smallname1"
                     android:layout_width="wrap_content"
@@ -39,6 +50,8 @@
                     android:text="@string/calories_name"
                     android:textSize="12sp"
                     android:textColor="@android:color/darker_gray"/>
+
+                <!-- 내용1 Calories Value  -->
                 <TextView
                     android:id="@+id/descript_largename1"
                     android:layout_width="wrap_content"
@@ -51,18 +64,24 @@
                     android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
-<!--            vertical border-->
+
+            <!--    수직 경계선1    -->
+            <!-- 내용1 과 내용2 사이에 있음 -->
             <View
                 android:id="@+id/descript_verticalborder1"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
                 android:background="@android:color/darker_gray" />
+
+            <!--  각 영양소별 제목과 내용을 담기위한 수직 LinearLayout  -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:orientation="vertical">
+
+                <!--    소제목2 Protein     -->
                 <TextView
                     android:id="@+id/descript_smallname2"
                     android:layout_width="wrap_content"
@@ -72,6 +91,8 @@
                     android:text="@string/protein_name"
                     android:textSize="12sp"
                     android:textColor="@android:color/darker_gray"/>
+
+                <!-- 내용2 Protein Value  -->
                 <TextView
                     android:id="@+id/descript_largename2"
                     android:layout_width="wrap_content"
@@ -84,18 +105,24 @@
                     android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
-<!--            vertical border-->
+
+            <!--    수직 경계선2    -->
+            <!-- 내용2 과 내용3 사이에 있음 -->
             <View
                 android:id="@+id/descript_verticalborder2"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
                 android:background="@android:color/darker_gray" />
+
+            <!--  각 영양소별 제목과 내용을 담기위한 수직 LinearLayout  -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:orientation="vertical">
+
+                <!--    소제목3 Fat    -->
                 <TextView
                     android:id="@+id/descript_smallname3"
                     android:layout_width="wrap_content"
@@ -105,6 +132,8 @@
                     android:text="@string/fat_name"
                     android:textSize="12sp"
                     android:textColor="@android:color/darker_gray"/>
+
+                <!-- 내용3 Fat Value  -->
                 <TextView
                     android:id="@+id/descript_largename3"
                     android:layout_width="wrap_content"
@@ -118,7 +147,10 @@
             </LinearLayout>
         </LinearLayout>
 
-<!--        horizontal border-->
+
+
+
+        <!--    top contents 와 bottom contents 를 나누는 수평경계선    -->
         <View
             android:id="@+id/descript_horizontalborder1"
             android:layout_width="match_parent"
@@ -126,33 +158,35 @@
             android:layout_margin="16dp"
             android:background="@android:color/darker_gray"/>
 
-<!--        bottom contents-->
-        <LinearLayout
-            android:layout_width="match_parent"
+
+
+
+        <!--   Bottom Contents  -->
+
+        <!--    설명문 제목    -->
+        <TextView
+            android:id="@+id/descript_bottom_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/descript_title1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="@string/sample_name"
-                android:textSize="24sp"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:labelFor="@id/descript_longtext"/>
-            <TextView
-                android:id="@+id/descript_longtext"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/long_text"
-                android:textSize="12sp"
-                android:textStyle="italic"
-                android:hint="@string/sample_name"/>
-        </LinearLayout>
+            android:layout_margin="16dp"
+            android:text="@string/sample_name"
+            android:textSize="24sp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:labelFor="@id/descript_longtext"/>
+
+        <!--    설명문 내용    -->
+        <TextView
+            android:id="@+id/descript_longtext"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/long_text"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:hint="@string/sample_name"/>
 
     </LinearLayout>
 

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.os.Parcelable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -18,12 +17,11 @@ import com.example.layoutsample.FoodData;
 import com.example.layoutsample.InfoActivity;
 import com.example.layoutsample.R;
 import com.example.layoutsample.Util.BitmapCacheManager;
-import com.example.layoutsample.Util.BitmapLoader;
+import com.example.layoutsample.Util.ImageResourceLoader;
 
 /**
  * RecyclerView.ViewHolder 를 상속받아 만든 클래스
- * CardView 를 감싸고 카드뷰의 자식뷰와 해당 카드 데이터를 가지고 있음
- * 데이터 - star on/off, 제목, 배경 resId
+ * 대상 루트뷰의 자식뷰와 해당 카드 데이터를 가지고 있음
  */
 public class SampleCardViewHolder extends RecyclerView.ViewHolder {
     // 카드뷰의 배경 뷰
@@ -75,19 +73,21 @@ public class SampleCardViewHolder extends RecyclerView.ViewHolder {
     }
 
     /**
-     * 배경 이미지 지정
+     * 배경 뷰 이미지 지정
      * @param imageId 이미지 리소스id
      */
     private void setImage(int imageId) {
         Resources resources = mLayout.getResources();
 
-        BitmapLoader loader = new BitmapLoader(new BitmapCacheManager());
+        // 로더에게 비동기적으로 Drawable 리소스 로드작업을 맡김
+        ImageResourceLoader loader = new ImageResourceLoader(new BitmapCacheManager());
+        //이미지 배율 조정
         loader.setScale(0.6f);
-        loader.loadBitmap(resources, imageId, mBackground);
+        loader.loadImageResource(resources, imageId, mBackground);
     }
 
     /**
-     * 이름 제목 지정
+     * 이름 뷰 제목 지정
      * @param name 이름 제목 문자열
      */
     private void setName(String name) {
@@ -95,7 +95,7 @@ public class SampleCardViewHolder extends RecyclerView.ViewHolder {
     }
 
     /**
-     * 별 버튼 on/off 지정
+     * 별 버튼뷰 on/off 표시 지정
      * @param isFill on/off 여부
      */
     private void setStarFill(boolean isFill) {
@@ -111,7 +111,7 @@ public class SampleCardViewHolder extends RecyclerView.ViewHolder {
     }
 
     /**
-     * 데이터 적용
+     * 데이터 적용하는 곳
      * 이미지, 이름, 별표 여부 자식뷰에 적용
      * @param data 적용할 데이터 (FoodData)
      */

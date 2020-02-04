@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         if(getSupportActionBar() != null) getSupportActionBar().setElevation(0);
 
 
-        //이전 상태가 있을 때만 새로운 데이터 객체 생성
+        //이전 상태가 없을 때만 새로운 데이터 객체 생성
         if(savedInstanceState == null) {
             //Mock Data Initialize
             mDataArray = new FoodData[5];
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             mDataArray[2] = new FoodData(R.drawable.icecream, "Icecream");
             mDataArray[3] = new FoodData(R.drawable.maratang, "Maratang");
             mDataArray[4] = new FoodData(R.drawable.noodle, "Noodle");
+
         } else {
             mDataArray = (FoodData[])savedInstanceState.getParcelableArray("payload");
         }
@@ -52,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
         //RecyclerView initialize
         RecyclerView recyclerView = findViewById(R.id.sample_recyclerview);
 
-        //specify LayoutManager inside RecyclerView
+        //LayoutManager 지정
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        //specify Adapter
+        //Adapter 초기화, 등록 및 데이터 등록
         SampleCardAdapter adapter = new SampleCardAdapter();
         adapter.setDataList(mDataArray);
         recyclerView.setAdapter(adapter);
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * xml onClick속성에 붙여줄 메서드
-     * InfoLinearActivity 를 호출한다
+     * InfoLinearActivity 를 시작한다
      *
      * @param v onClick 속성으로 호출한 뷰
      */
